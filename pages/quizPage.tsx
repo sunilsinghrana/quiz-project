@@ -8,7 +8,7 @@ function QuizPage() {
   const [answer, setAnswer] = useState<Array<number>>([]);
   const [number, setNumber] = useState(0);
   const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(10);
+  const [seconds, setSeconds] = useState(30);
   const [isSelect, setIsSelect] = useState(false);
 
   const handleAnswer = (id: number, ans: number) => {
