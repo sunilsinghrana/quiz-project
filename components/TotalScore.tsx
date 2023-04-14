@@ -32,19 +32,19 @@ const TotalScore = ({ answer }: any) => {
       <div className="showing-result flex flex-col justify-start items-start">
         <div>
           <p className="text-white text-xl">Q1. {questions[0].title}</p>
-          <p className={`${answer[0] === questions[0].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{questions[0].answerOptions[answer[0]]}</p>
+          <p className={`${answer[0] === questions[0].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{answer[0] === questions[0].ans ? questions[0].answerOptions[answer[0]] : (<p className="text-red-600 text-lg">Not seleted any Answer</p>)}</p>
         </div>
         <div>
-          <p className="text-white text-xl">Q1. {questions[0].title}</p>
-          <p className={`${answer[1] === questions[1].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{questions[1].answerOptions[answer[1]]}</p>
+          <p className="text-white text-xl">Q2. {questions[0].title}</p>
+          <p className={`${answer[1] === questions[1].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{answer[1] === questions[1].ans ? questions[1].answerOptions[answer[1]] : (<p className="text-red-600 text-lg">Not seleted any Answer</p>)}</p>
         </div>
         <div>
-          <p className="text-white text-xl">Q1. {questions[0].title}</p>
-          <p className={`${answer[2] === questions[2].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{questions[2].answerOptions[answer[2]]}</p>
+          <p className="text-white text-xl">Q3. {questions[0].title}</p>
+          <p className={`${answer[2] === questions[2].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{answer[2] === questions[2].ans ? questions[2].answerOptions[answer[2]] : (<p className="text-red-600 text-lg">Not seleted any Answer</p>)}</p>
         </div>
         <div>
-          <p className="text-white text-xl">Q1. {questions[0].title}</p>
-          <p className={`${answer[3] === questions[3].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{questions[3].answerOptions[answer[3]]}</p>
+          <p className="text-white text-xl">Q4. {questions[0].title}</p>
+          <p className={`${answer[3] === questions[3].ans ? 'text-green-600' : 'text-red-600'} text-lg ml-8`}>{answer[3] === questions[3].ans ? questions[3].answerOptions[answer[3]] : (<p className="text-red-600 text-lg">Not seleted any Answer</p>)}</p>
         </div>
       </div>
       <div className="w-full text-center my-16">
