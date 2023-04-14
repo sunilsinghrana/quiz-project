@@ -8,7 +8,7 @@ function QuizPage() {
   const [answer, setAnswer] = useState<Array<number>>([]);
   const [number, setNumber] = useState(0);
   const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(30);
+  const [seconds, setSeconds] = useState(10);
   const [isSelect, setIsSelect] = useState(false);
 
   const handleAnswer = (id: number, ans: number) => {
@@ -67,7 +67,7 @@ function QuizPage() {
   return (
     <div className="h-[100vh] w-[100vw] flex flex-col justify-center items-center">
       {/* showing score */}
-      {number === 4 || minutes === 0 ? (
+      {number === 4 || (minutes === 0 && seconds === 1)  ? (
         <TotalScore answer={answer} />
       ) : (
         <>
