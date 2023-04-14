@@ -88,22 +88,22 @@ function QuizPage() {
             <div className="w-full flex justify-center items-center py-5">
               <button
                 onClick={() => handlePreviousQuestion()}
-                className={`text-white ${
+                className={` ${
                   number === 0
                     ? 
                     "text-gray-500 border border-gray-500 cursor-default"
                     : 
-                    "border border-gray-400"
+                    "border border-gray-400 text-white"
                 } p-2 mr-3 rounded-md px-5`}
               >
                 Back
               </button>
               <button
                 onClick={() => handleNextQuestion()}
-                className={`text-white ${
+                className={`${
                   isSelect
                     ? 
-                    "border border-gray-400"
+                    "border border-gray-400 text-white"
                     :
                      "text-gray-500 border border-gray-500 cursor-default"
                 } p-2 ml-3 rounded-md px-5`}
