@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import questions from "./Questions";
 
-const TotalScore = ({ answer }: any) => {
+const TotalScore = ({ answer,setIsSelect }: any) => {
 
     function giveResult():any {
       let cnt = 0;
@@ -21,6 +21,7 @@ const TotalScore = ({ answer }: any) => {
         questions[i].background = arr1;
         questions[i].color = arr2;
       }
+      setIsSelect(false)
     }
 
   return (

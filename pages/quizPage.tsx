@@ -13,8 +13,7 @@ function QuizPage() {
 
   const handleAnswer = (id: number, ans: number) => {
     answer[id] = ans    
-    setIsSelect(true);
-
+    
     function Reset() {
       let arr1 = questions[id].background;
       arr1 = ["#252D4A", "#252D4A", "#252D4A", "#252D4A"];
@@ -24,9 +23,10 @@ function QuizPage() {
       questions[id].color = arr2;
     }
     Reset();
-
+    
     questions[id].background[ans] = "#9ca3af";
     questions[id].color[ans] = "black";
+    setIsSelect(true);
   };
 
   // session based timer
@@ -54,12 +54,14 @@ function QuizPage() {
   // run for next question
   const handleNextQuestion = () => {
     if (number === 4) return;
-
-    setNumber(number + 1);
-    setIsSelect(false);
+   if(isSelect){
+     setNumber(number + 1);
+     setIsSelect(false);
+    }
   };
   // run for previous question
   const handlePreviousQuestion = () => {
+    if(number === 0) return;
     setNumber(number - 1);
     setIsSelect(true);
   };
@@ -67,8 +69,8 @@ function QuizPage() {
   return (
     <div className="h-[100vh] w-[100vw] flex flex-col justify-center items-center">
       {/* showing score */}
-      {number === 4 || (minutes === 0 && seconds === 1)  ? (
-        <TotalScore answer={answer} />
+      {number === 4 || (minutes === 0 && seconds < 2)  ? (
+          <TotalScore answer={answer} setIsSelect={setIsSelect}/>
       ) : (
         <>
           {/* showing questions */}
@@ -88,8 +90,10 @@ function QuizPage() {
                 onClick={() => handlePreviousQuestion()}
                 className={`text-white ${
                   number === 0
-                    ? "text-gray-400 border border-gray-400"
-                    : "border border-gray-400"
+                    ? 
+                    "text-gray-500 border border-gray-500 cursor-default"
+                    : 
+                    "border border-gray-400"
                 } p-2 mr-3 rounded-md px-5`}
               >
                 Back
@@ -98,8 +102,10 @@ function QuizPage() {
                 onClick={() => handleNextQuestion()}
                 className={`text-white ${
                   isSelect
-                    ? "border border-gray-400"
-                    : "text-gray-400 border border-gray-400"
+                    ? 
+                    "border border-gray-400"
+                    :
+                     "text-gray-500 border border-gray-500 cursor-default"
                 } p-2 ml-3 rounded-md px-5`}
               >
                 Next
